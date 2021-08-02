@@ -51,8 +51,8 @@ The following attributes are supported for use in template elements.
 | Attribute | Purpose |
 | --------- | ------- |
 | `data-from` | The key on the parameters object for the data to apply to the element. |
-| `data-template` | The ID of another template element to use for child elements if the `data-from` parameter is an array. |
-| `data-attr` | The key on the parameters object containing that defines what the element's attribute values should be. See example. |
+| `data-template` | The ID of another template element if the `data-from` value is an array. |
+| `data-attr` | The key on the parameters object containing HTML attribute values. See example. |
 
 Here's a comprehensive example:
 
