@@ -80,6 +80,7 @@ var parameters = {
         { medal: 'Gold', sport: 'Hindsight', award-attr: { 'class', 'style--gold'} },
         { medal: 'Bronze' : sport: 'foresight', award-attr: { 'class', ''} }]
 };
+```
 
 ```css
 .style--gold { background-color: ##FFD700 }
