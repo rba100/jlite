@@ -47,7 +47,7 @@ dataRefresh(newElement, parameters);
 ```
 ## Parameterising template elements
 
-The second argument to `instantiate` and `dataRefresh` supplies the parameters for the templated element. It can be an object, string or number. If it's a string or number, then any `data-from` elements will be ignored and the value will simply be used as the text value of the templated element.
+The second argument to `instantiate` and `dataRefresh` supplies the parameters for the templated element. It can be an object, string or number.
 
 The following attributes are supported for use in template elements.
 
@@ -86,6 +86,8 @@ var parameters = {
 .style--gold { background-color: ##FFD700 }
 ```
 The parameters object is not two-way bound. Later changes to the parameters object will have no effect on elements made from previous invocations.
+
+For very simple templates, the parameters value can be a string or number instead of an object. In this case, `data-from` must have no value, e.g. `<div><p>Favourite number: <span data-from></span>.</p></div>` with `instantiate('template', 7);`.
 
 ## Programming patterns
 
