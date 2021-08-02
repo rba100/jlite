@@ -1,5 +1,5 @@
 # jlite
-A very simple way to make HTML UI elements from Javascript.
+A very simple way to make dynamic HTML UI elements from Javascript.
 
 Requires jQuery.
 
@@ -13,6 +13,9 @@ Requires jQuery.
 
 ```html
 <html>
+    <head>
+        <script type="text/javascript" src="/js/jlite.js"></script>
+    </head>
     <body>
         <div Id="myContainer"></div>
 
@@ -29,7 +32,7 @@ Requires jQuery.
 ```javascript
 var parameters = { name: 'Dave' };
 
-var newElement = instantiate('#templateId', parameters);
+var newElement = instantiate('templateId', parameters);
 $('#myContainer').append(newElement);
 ```
 
@@ -54,7 +57,7 @@ The following attributes are supported for use in template elements.
 | `data-template` | The ID of another template element to use for child elements if the `data-from` parameter is an array. |
 | `data-attr` | The key on the parameters object containing that defines what the element's attribute values should be. See example. |
 
-Here's an example that uses all the features.
+Here's a comprehensive example:
 
 ```html
 <template Id="profile-template">
@@ -75,7 +78,7 @@ var parameters = {
     name: 'Captain Obvious',
     awards: [
         { medal: 'Gold', sport: 'Hindsight', awardAttr: { 'class', 'style--gold'} },
-        { medal: 'Bronze' : sport: 'foresight', awardAttr: { 'class', ''} }]
+        { medal: 'Bronze', sport: 'Foresight', awardAttr: { 'class', ''} }]
 };
 ```
 
