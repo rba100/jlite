@@ -3,7 +3,7 @@ A very simple way to make HTML UI elements from Javascript.
 
 Requires jQuery.
 
-## Usage
+## Basic Usage
 
 1. Create `<template>` elements in your main view. Each template element must have an Id attribute and exactly one child element.
 
@@ -33,13 +33,67 @@ var newElement = instantiate('#templateId', parameters);
 $('#myContainer').append(newElement);
 ```
 
+You can call `dataRefresh` instead of `instantiate` if the element already exists, e.g.
+
+```javascript
+var parameters = { name: 'Dave' };
+var newElement = instantiate('templateId', parameters);
+$('#myContainer').append(newElement);
+parameters.name = 'Steve';
+dataRefresh(newElement, parameters);
+```
+
+
+
+## Parameterising template elements
+
+The second argument to `instantiate` and `dataRefresh` supplies the parameters for the templated element. It can be an object, string or number. If it's a string or number, then any `data-from` elements will be ignored and the value will simply be used as the text value of the templated element.
+
 The following attributes are supported for use in template elements.
 
 | Attribute | Purpose |
 | --------- | ------- |
-| data-from | The key on the parameters object for the data to apply to the element. |
-| data-template | The ID of another template element to use for child elements if the `data-from` parameter is an array. |
-| data-attr | The key on the parameters object containing another object that defines what the element's attribute values should be |
+| `data-from` | The key on the parameters object for the data to apply to the element. |
+| `data-template` | The ID of another template element to use for child elements if the `data-from` parameter is an array. |
+| `data-attr` | The key on the parameters object containing that defines what the element's attribute values should be. See example. |
+
+Here's an example that uses all the features.
+
+```html
+<template Id="profile-template">
+    <div>
+        <h1 data-from="name"></h1>
+        <ul data-from="awards" data-template="award-template" />
+    </div>
+</template>
+<template Id="award-template">
+    <li data-attributes="award-attr">
+        <p><span data-from="medal"></span> — <span data-from="sport"></span></p>
+    </li>
+</template>
+```
+
+```javascript
+var parameters = { 
+    name: 'Captain Obvious',
+    awards: [
+        { medal: 'Gold', sport: 'Hindsight', award-attr: { 'class', 'style--gold'} },
+        { medal: 'Bronze' : sport: 'foresight', award-attr: { 'class', ''} }]
+};
+
+```css
+.style--gold { background-color: ##FFD700 }
+```
+
+var newElement = instantiate('profile-template', parameters);
+$('#myContainer').append(newElement);
+```
+
+The parameters object is not two-way bound. Later changes to the parameters object will have no effect on elements made from previous invocations.
+
+### Defining attributes
+
+
 
 ## Programming patterns
 
