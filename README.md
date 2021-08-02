@@ -1,5 +1,5 @@
 # jlite
-A very simple way to HTML UI elements from Javascript.
+A very simple way to make HTML UI elements from Javascript.
 
 Requires jQuery.
 
