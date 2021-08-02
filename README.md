@@ -28,11 +28,8 @@ Requires jQuery.
 </html>
 ```
 
-
 ```javascript
-var parameters = { name: 'Dave' };
-
-var newElement = instantiate('templateId', parameters);
+var newElement = instantiate('templateId', { name: 'Dave' });
 $('#myContainer').append(newElement);
 ```
 
