@@ -98,7 +98,7 @@ var parameters = {
     name: 'Captain Obvious',
     awards: [
         { medal: 'Gold', sport: 'Hindsight', awardAttr: { 'class', 'style--gold'} },
-        { medal: 'Bronze', sport: 'Foresight', awardAttr: { 'class', ''} }]
+        { medal: 'Bronze', sport: 'Foresight' }]
 };
 ```
 
@@ -109,7 +109,7 @@ The parameters object is not two-way bound. Later changes to the parameters obje
 
 For very simple templates the parameters value can be a string or number instead of an object. In this case, `data-from` must have no value, e.g. `<div><p>Favourite number: <span data-from></span>.</p></div>` with `instantiate('template', 7);`.
 
-Mis-matched parameters to templates fails silently. I.e. if you omit a property that a `data-from` asks for, or if you provide a property for which there is no correspondig `data-` element then the framework will just move on and do what it can.
+Mis-matched parameters to templates fails silently. I.e. if you omit a property that a `data-` asks for, or if you provide a property for which there is no correspondig `data-` element then the framework will just move on and do what it can.
 
 ## Programming patterns
 
