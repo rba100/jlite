@@ -107,7 +107,9 @@ var parameters = {
 ```
 The parameters object is not two-way bound. Later changes to the parameters object will have no effect on elements made from previous invocations. It's up to you to refresh elements as needed.
 
-For very simple templates, the parameters value can be a string or number instead of an object. In this case, `data-from` must have no value, e.g. `<div><p>Favourite number: <span data-from></span>.</p></div>` with `instantiate('template', 7);`.
+For very simple templates the parameters value can be a string or number instead of an object. In this case, `data-from` must have no value, e.g. `<div><p>Favourite number: <span data-from></span>.</p></div>` with `instantiate('template', 7);`.
+
+Mis-matched parameters to templates fails silently. I.e. if you omit a property that a `data-from` asks for, or if you provide a property for which there is no correspondig `data-` element then the framework will just move on and do what it can.
 
 ## Programming patterns
 
