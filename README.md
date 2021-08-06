@@ -113,4 +113,4 @@ Mis-matched parameters to templates fails silently. I.e. if you omit a property 
 
 ## Programming patterns
 
-This scheme is only suited for simple web pages where a full fat framework would be a waste of time. jQuery is the only dependency.
+This scheme is only suited for simple web pages where a full fat framework would be a waste of time. Use any patterns you want.
