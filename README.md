@@ -11,6 +11,8 @@ Requires jQuery.
 
 3. Append the new element to an existing element in the DOM.
 
+Here's a simple example:
+
 ```html
 <html>
     <head>
