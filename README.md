@@ -48,7 +48,7 @@ dataRefresh(newElement, parameters);
 
 The second argument to `instantiate` and `dataRefresh` supplies the parameters for the templated element. It can be an object, string or number.
 
-The following attributes are supported.
+To reference those parameters on template elements the following attributes are supported.
 
 | Attribute | Purpose |
 | --------- | ------- |
